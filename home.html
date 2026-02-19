@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payoo | login</title>
+    <title>Payoo | home</title>
 
     <!-- fav icon -->
     <link rel="shortcut icon" href="assets/Logo.png" type="image/x-icon" />
@@ -72,7 +72,7 @@
     </section>
 
     <section class="items w-11/12 mx-auto grid grid-cols-3 gap-4">
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button id="add-money" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
         <img src="assets/opt-1.png" alt="" />
         <p>Add Money</p>
       </button>
@@ -96,6 +96,25 @@
         <img src="assets/opt-5.png" alt="" />
         <p>Transactions</p>
       </button>
+    </section>
+
+    <section id="cashout-sec" class="out w-11/12 mx-auto py-5 mb-20 hidden">
+      <h1 class="text-2xl font-bold">Cashout</h1>
+      <div>
+         <div class="form ">
+      <div class="card bg-base-100 w-full shrink-0 shadow mx-auto top-5 ">
+      <div class="card-body ">
+        <fieldset class="fieldset space-y-2 ">
+          <label class="label font-bold text-neutral-950">Agent Number</label>
+          <input id="number" maxlength="11" minlength="11" type="email" class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 number " />
+          <label class="label font-bold text-neutral-950">Amount</label>
+          <input id="amount-number" type="text" class="input rounded-full bg-base-200 border-none" placeholder="Enter amount to withdraw " />
+          <label class="label font-bold text-neutral-950">4 Digit Pin</label>
+          <input id="pin" maxlength="4" type="password" class="input rounded-full bg-base-200 border-none" placeholder="Enter 4 digit pin" />
+          <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+          <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4 btn-">Withdraw Money</button>
+    </div>
+      </div>
     </section>
 
     <script src="/script/home.js"></script>
