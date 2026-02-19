@@ -46,7 +46,7 @@
               <img src="assets/logo.png" alt="" />
             </div>
             <div class="balance-text w-[150px]">
-              <h1 class="text-2xl"><span id="balance">$45000</span></h1>
+              <h1 class="text-2xl">$<span id="balance">45000</span></h1>
 
               <p class="text-sm text-gray-400">Available Balance</p>
             </div>
@@ -76,7 +76,7 @@
         <img src="assets/opt-1.png" alt="" />
         <p>Add Money</p>
       </button>
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button id="cash-out" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
         <img src="assets/opt-2.png" alt="" />
         <p>Cashout</p>
       </button>
@@ -102,13 +102,13 @@
       <h1 class="text-2xl font-bold">Cashout</h1>
       <div>
          <div class="form ">
-      <div class="card bg-base-100 w-full shrink-0 shadow mx-auto top-5 ">
+      <div class="card bg-base-100 w-full shadow top-5 ">
       <div class="card-body ">
         <fieldset class="fieldset space-y-2 ">
           <label class="label font-bold text-neutral-950">Agent Number</label>
-          <input id="number" maxlength="11" minlength="11" type="email" class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 number " />
+          <input id="agent-number" maxlength="11" minlength="11" type="text"  class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 number " />
           <label class="label font-bold text-neutral-950">Amount</label>
-          <input id="amount-number" type="text" class="input rounded-full bg-base-200 border-none" placeholder="Enter amount to withdraw " />
+          <input id="amount-number" type="number" class="input rounded-full bg-base-200 border-none" placeholder="Enter amount to withdraw " />
           <label class="label font-bold text-neutral-950">4 Digit Pin</label>
           <input id="pin" maxlength="4" type="password" class="input rounded-full bg-base-200 border-none" placeholder="Enter 4 digit pin" />
           <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
