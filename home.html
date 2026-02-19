@@ -38,9 +38,9 @@
     </style>
   </head>
   <body class="min-h-screen max-w-md mx-auto bg-base-200">
-    <header class="navbar">
+    <header class="navbar top-0 sticky pt-0 z-10">
       <div class="navbar bg-base-200 shadow-sm">
-        <div class="navbar-start">
+        <div class="navbar-start ">
           <div class="mother flex items-center">
             <div class="logo w-[100px] p-3">
               <img src="assets/logo.png" alt="" />
@@ -71,35 +71,74 @@
       </p>
     </section>
 
+    <!-- button k grp declare krte hbe, vitore ja ase ta button focus a thakle responce krbe -->
     <section class="items w-11/12 mx-auto grid grid-cols-3 gap-4">
-      <button id="add-money" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button id="add-money" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-1.png" alt="" />
-        <p>Add Money</p>
+        <p class="group-focus:text-white">Add Money</p>
       </button>
-      <button id="cash-out" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button id="cash-out" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-2.png" alt="" />
-        <p>Cashout</p>
+        <p class="group-focus:text-white">Cashout</p>
       </button>
-      <button class="btn flex-col h-full p-2 rounded-2xl btn-primary btn-soft">
+      <button class="btn flex-col h-full p-2 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-3.png" alt="" />
-        <p>Transfer Money</p>
+        <p class="group-focus:text-white">Transfer Money</p>
       </button>
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-4.png" alt="" />
-        <p>Get Bonus</p>
+        <p class="group-focus:text-white">Get Bonus</p>
       </button>
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-5.png" alt="" />
-        <p>Pay Bill</p>
+        <p class="group-focus:text-white">Pay Bill</p>
       </button>
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft">
+      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-5.png" alt="" />
-        <p>Transactions</p>
+        <p class="group-focus:text-white">Transactions</p>
       </button>
     </section>
 
-    <section id="cashout-sec" class="out w-11/12 mx-auto py-5 mb-20 hidden">
+    <section id="add-money-sec" class="out w-11/12 mx-auto py-5 mb-20 ">
+      <h1 class="text-2xl font-bold">Add Money</h1>
+      <div>
+         <div class="form ">
+      <div class="card bg-base-100 w-full shadow top-5 ">
+      <div class="card-body ">
+        <fieldset class="fieldset space-y-2 ">
+          <label class="label font-bold text-neutral-950">Agent Number</label>
+          <input id="agent-number" maxlength="11" minlength="11" type="text"  class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 number " />
+          <label class="label font-bold text-neutral-950">Amount</label>
+          <input id="amount-number" type="number" class="input rounded-full bg-base-200 border-none" placeholder="Enter amount to withdraw " />
+          <label class="label font-bold text-neutral-950">4 Digit Pin</label>
+          <input id="pin" maxlength="4" type="password" class="input rounded-full bg-base-200 border-none" placeholder="Enter 4 digit pin" />
+          <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+          <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4 btn-">Withdraw Money</button>
+    </div>
+      </div>
+    </section>
+
+    <section id="cashout-sec" class="out w-11/12 mx-auto py-5 mb-20 ">
       <h1 class="text-2xl font-bold">Cashout</h1>
+      <div>
+         <div class="form ">
+      <div class="card bg-base-100 w-full shadow top-5 ">
+      <div class="card-body ">
+        <fieldset class="fieldset space-y-2 ">
+          <label class="label font-bold text-neutral-950">Agent Number</label>
+          <input id="agent-number" maxlength="11" minlength="11" type="text"  class="input rounded-full bg-base-200 border-none" placeholder="Enter your 11 number " />
+          <label class="label font-bold text-neutral-950">Amount</label>
+          <input id="amount-number" type="number" class="input rounded-full bg-base-200 border-none" placeholder="Enter amount to withdraw " />
+          <label class="label font-bold text-neutral-950">4 Digit Pin</label>
+          <input id="pin" maxlength="4" type="password" class="input rounded-full bg-base-200 border-none" placeholder="Enter 4 digit pin" />
+          <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+          <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4 btn-">Withdraw Money</button>
+    </div>
+      </div>
+    </section>
+
+    <section id="add-money-sec" class="out w-11/12 mx-auto py-5 mb-20 hidden">
+      <h1 class="text-2xl font-bold">Add Money</h1>
       <div>
          <div class="form ">
       <div class="card bg-base-100 w-full shadow top-5 ">
