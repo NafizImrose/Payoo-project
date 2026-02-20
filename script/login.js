@@ -35,7 +35,7 @@ document.getElementById("input-btn").addEventListener("click", function () {
   if (number === "01741216586" && pin === "1234") {
     alert("Successfully loged in...Welcome");
     // window.location.replace("home.html");
-    window.location.assign("/home.html");
+    window.location.assign("home.html");
   } else {
     // alert("log in failed, try again");
     return;
