@@ -89,11 +89,11 @@
         <img src="assets/opt-4.png" alt="" />
         <p class="group-focus:text-white">Get Bonus</p>
       </button>
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
+      <button  class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-5.png" alt="" />
         <p class="group-focus:text-white">Pay Bill</p>
       </button>
-      <button class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
+      <button onclick="showOnly('history-section')" class="btn flex-col h-full p-4 rounded-2xl btn-primary btn-soft group focus:bg-[#570DF8]">
         <img src="assets/opt-5.png" alt="" />
         <p class="group-focus:text-white">Transactions</p>
       </button>
@@ -153,6 +153,19 @@
           <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4 btn-">Withdraw Money</button>
     </div>
       </div>
+    </section>
+
+    <section id="history-section" class="history w-11/12 mx-auto py-5 mb-20 ">
+        <div class="flex justify-between items-center mb-3">
+            <h1 class="text-2xl font-bold">Transaction History</h1>
+            <p class="text-gray-500">View All</p>
+        </div>
+
+        <div id="history-list" class="space-y-5"> 
+            
+    </div>
+       
+
     </section>
 
    

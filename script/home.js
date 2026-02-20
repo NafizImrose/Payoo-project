@@ -2,29 +2,6 @@ document.getElementById("logout-btn").addEventListener("click", function () {
   window.location.replace("/index.html");
 });
 
-// cashout
-// let flag = false;
-// const btn = document.getElementById("cash-out");
-// const cashOut = document.getElementById("cashout-sec");
-
-// btn.addEventListener("click", function () {
-//   if (!flag) {
-//     // cashOut.style.display = "block";
-//     cashOut.classList.remove("hidden");
-//     flag = true;
-//   } else {
-//     cashOut.classList.add("hidden");
-//     flag = false;
-//   }
-// });
-
-// btn.addEventListener("focus", function () {
-//   cashOut.classList.remove("hidden");
-// });
-// btn.addEventListener("blur", function () {
-//   cashOut.classList.add("hidden");
-// });
-
 //Machine ***************************************************************************
 function getPin(value) {
   const pin = document.getElementById(value);
@@ -45,6 +22,7 @@ function currentBalance() {
 }
 
 function replaceBlance(value) {
+  const balance = document.getElementById("balance");
   balance.innerText = value;
 }
 
@@ -56,9 +34,11 @@ function GetValueOfInput(value) {
 function showOnly(id) {
   const addMoney = document.getElementById("add-money-sec");
   const cashOut = document.getElementById("cashout-sec");
+  const history = document.getElementById("history-section");
 
   addMoney.classList.add("hidden");
   cashOut.classList.add("hidden");
+  history.classList.add("hidden");
 
   const select = document.getElementById(id);
   select.classList.remove("hidden");
@@ -67,7 +47,7 @@ function showOnly(id) {
 
 // cash-out ****************************************************************************************
 document.getElementById("withdraw-btn").addEventListener("click", function () {
-  const agentNumber = GetValueInput("out-agent-number");
+  const agentNumber = GetValueOfInput("out-agent-number");
 
   const pinNumber = getPin("cash-out-pin");
 
@@ -81,6 +61,26 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
     } else {
       balanceAmount = balanceAmount - withdrawAmount;
       replaceBlance(balanceAmount);
+      //add transaction
+
+      const card = document.createElement("div");
+      card.innerHTML = `
+      <div  class="flex justify-between items-center bg-base-100 rounded-2xl p-2 pl-6">
+            <div class="flex gap-4 items-center p-0">
+                <div class="flex justify-center items-center rounded-full bg-gray-200 w-10 h-10 p-0"><img src="assets/opt-1.png" alt=""></div>
+                <div>
+                    <h2 class="font-bold">Cash Out : $ ${withdrawAmount} </h2>
+                    ${new Date()}
+                </div>
+            </div>
+            <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+        </div>
+      `;
+      const history = document.getElementById("history-list");
+      history.append(card);
     }
   } else {
     alert("Invalid pin or agent number");
@@ -89,27 +89,6 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
 // cash-out-end ****************************************************************************************
 
 // Add-Money-start ***************************************************************************************
-// let flag1 = false;
-// const addBtn = document.getElementById("add-money");
-// const addMoney = document.getElementById("add-money-sec");
-
-// addBtn.addEventListener("click", function () {
-//   if (!flag1) {
-//     // cashOut.style.display = "block";
-//     addMoney.classList.remove("hidden");
-//     flag1 = true;
-//   } else {
-//     addMoney.classList.add("hidden");
-//     flag1 = false;
-//   }
-// });
-
-// addBtn.addEventListener("focus", function () {
-//   addMoney.classList.remove("hidden");
-// });
-// addBtn.addEventListener("blur", function () {
-//   addMoney.classList.add("hidden");
-// });
 
 document.getElementById("add-btn").addEventListener("click", function () {
   const agent = GetValueOfInput("banc-name");
@@ -128,6 +107,26 @@ document.getElementById("add-btn").addEventListener("click", function () {
 
     balance += inputBalance;
     replaceBlance(balance);
+    //add history
+
+    const card = document.createElement("div");
+    card.innerHTML = `
+      <div  class="flex justify-between items-center bg-base-100 rounded-2xl p-2 pl-6">
+            <div class="flex gap-4 items-center p-0">
+                <div class="flex justify-center items-center rounded-full bg-gray-200 w-10 h-10 p-0"><img src="assets/opt-1.png" alt=""></div>
+                <div>
+                    <h2 class="font-bold">Add Money : $ ${inputBalance} </h2>
+                    ${new Date()}
+                </div>
+            </div>
+            <div>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+
+        </div>
+      `;
+    const history = document.getElementById("history-list");
+    history.append(card);
   } else {
     alert("Invalid Pin Number");
   }
